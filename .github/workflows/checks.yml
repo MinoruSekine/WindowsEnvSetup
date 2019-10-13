@@ -19,3 +19,15 @@ jobs:
         iex (New-Object net.webclient).downloadstring('https://get.scoop.sh')
         ./setup.ps1
       shell: pwsh
+
+  lint:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install PSScriptAnalyzer and check syntax
+      run: |
+        Install-Module -Name PSScriptAnalyzer -Force
+        Invoke-ScriptAnalyzer setup.ps1
+      shell: pwsh
