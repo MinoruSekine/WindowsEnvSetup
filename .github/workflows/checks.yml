@@ -1,0 +1,21 @@
+name: Checks
+
+on: [pull_request]
+
+jobs:
+  run_check:
+    strategy:
+      matrix:
+        os: [windows-latest, windows-2016]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install Scoop and run
+      run: |
+        Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+        iex (New-Object net.webclient).downloadstring('https://get.scoop.sh')
+        ./setup.ps1
+      shell: pwsh
