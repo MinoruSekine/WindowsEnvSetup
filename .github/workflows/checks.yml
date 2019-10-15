@@ -18,6 +18,7 @@ jobs:
         Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
         iex (New-Object net.webclient).downloadstring('https://get.scoop.sh')
         ./setup.ps1
+        ./setup.ps1  # Check idempotency.
       shell: pwsh
 
   lint:
