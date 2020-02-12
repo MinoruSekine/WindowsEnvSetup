@@ -3,7 +3,7 @@ name: Checks
 on:
   pull_request:
   schedule:
-    - cron:  0 20 * * 6
+    - cron:  0 20 * * 0
 
 jobs:
   run_check:
