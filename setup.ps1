@@ -6,7 +6,7 @@ function ScoopInstallIfUnavailable($module_name) {
 }
 
 scoop bucket add extras
-$command_array = @('cppcheck', 'emacs', 'mobaxterm')
+$command_array = @('innounp', 'dark', 'cppcheck', 'emacs', 'mobaxterm')
 foreach ($command_to_install in $command_array) {
     ScoopInstallIfUnavailable $command_to_install
 }
