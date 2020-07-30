@@ -13,4 +13,4 @@ foreach ($command_to_install in $install_module_array) {
 
 # Post install processes.
 scoop cleanup *
-
+scoop checkup
