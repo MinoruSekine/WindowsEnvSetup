@@ -5,16 +5,19 @@ function ScoopInstallIfUnavailable($module_name) {
     scoop install $module_name
 }
 
-# Add "extras" bucket if not available.
-$extra_available=$FALSE
-$scoop_bucket_list_result=scoop bucket list
-foreach ($line in $scoop_bucket_list_result) {
-    if ($line -match "^extras$") {
-	$extra_available=$TRUE
-	break
+function IsScoopExtrasBucketAvailable {
+    $scoop_bucket_list_result=scoop bucket list
+    foreach ($line in $scoop_bucket_list_result) {
+	if ($line -match "^extras$") {
+	    return $TRUE
+	}
     }
+    return $FALSE
 }
-if (!$extra_available) {
+
+# Add "extras" bucket if not available.
+$is_install_extras_necessary=IsScoopExtrasBucketAvailable
+if (!$is_install_extras_necessary) {
     scoop bucket add extras
 }
 
