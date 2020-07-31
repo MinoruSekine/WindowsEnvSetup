@@ -5,7 +5,7 @@ function ScoopInstallIfUnavailable($module_name) {
     scoop install $module_name
 }
 
-# Add "extra" bucket if not available.
+# Add "extras" bucket if not available.
 $extra_available=$FALSE
 $scoop_bucket_list_result=scoop bucket list
 foreach ($line in $scoop_bucket_list_result) {
