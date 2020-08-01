@@ -1,3 +1,5 @@
+![Checks](https://github.com/MinoruSekine/WindowsEnvSetup/workflows/Checks/badge.svg)
+
 # WindowsEnvSetup
 In this repository, there are files for setup my Windows environment.
 
