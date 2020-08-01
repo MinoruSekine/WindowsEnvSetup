@@ -16,12 +16,22 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Install Scoop and run
+    - name: Install Scoop
       run: |
         Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
         iex (New-Object net.webclient).downloadstring('https://get.scoop.sh')
+      shell: pwsh
+
+    - name: Run script (1st time)
+      run: |
+        $Env:Path += ";" + $Env:USERPROFILE + "\scoop\shims"
         ./setup.ps1
-        ./setup.ps1  # Check idempotency.
+      shell: pwsh
+
+    - name: Run script (2nd time to check idempotency)
+      run: |
+        $Env:Path += ";" + $Env:USERPROFILE + "\scoop\shims"
+        ./setup.ps1
       shell: pwsh
 
   lint:
@@ -30,8 +40,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Install PSScriptAnalyzer and check syntax
+    - name: Install PSScriptAnalyzer
       run: |
         Install-Module -Name PSScriptAnalyzer -Force
+      shell: pwsh
+
+    - name: Check syntax of PowerShell script
+      run: |
         Invoke-ScriptAnalyzer setup.ps1
       shell: pwsh
