@@ -2,6 +2,7 @@
 
 # WindowsEnvSetup
 In this repository, there are files for setup my Windows environment.
+The script to setup uses https://github.com/lukesampson/scoop .
 
 # How to use
 
@@ -27,8 +28,9 @@ These steps are only for example.
 1. `git config --global user.name "Your name"`
 1. `git config --global user.email "Your email address"`
 
-## Clone scripts and run
+## Clone scripts in this repository and run it
 
+1. `cd` to directory which you clone this repository into
 1. `git clone https://github.com/MinoruSekine/WindowsEnvSetup.git`
 1. `cd WindowsEnvSetup`
 1. `./setup.ps1`
