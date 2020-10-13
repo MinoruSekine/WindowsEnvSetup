@@ -15,10 +15,16 @@ function IsScoopBucketAvailable($bucket_name) {
     return $FALSE
 }
 
-# Add "extras" bucket if not available.
-$is_install_extras_necessary=IsScoopBucketAvailable("extras")
-if (!$is_install_extras_necessary) {
-    scoop bucket add extras
+function ScoopAddBucketIfUnavailable($bucket_name) {
+    if (!(IsScoopBucketAvailable $bucket_name)) {
+	scoop bucket add $bucket_name
+    }
+}
+
+# Add buckets if not available.
+$add_bucket_array = @('extras', 'java')
+foreach ($bucket in $add_bucket_array) {
+    ScoopAddBucketIfUnavailable $bucket
 }
 
 # Install each modules.
