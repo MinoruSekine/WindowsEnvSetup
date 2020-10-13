@@ -28,7 +28,7 @@ foreach ($bucket in $add_bucket_array) {
 }
 
 # Install each modules.
-$install_module_array = @('cppcheck', 'dark', 'emacs', 'innounp', 'mobaxterm', 'python')
+$install_module_array = @('cppcheck', 'dark', 'emacs', 'innounp', 'mobaxterm', 'openjdk', 'python')
 foreach ($command_to_install in $install_module_array) {
     ScoopInstallIfUnavailable $command_to_install
 }
