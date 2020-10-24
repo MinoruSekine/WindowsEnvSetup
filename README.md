@@ -33,4 +33,4 @@ These steps are only for example.
 1. `cd` to directory which you clone this repository into
 1. `git clone https://github.com/MinoruSekine/WindowsEnvSetup.git`
 1. `cd WindowsEnvSetup`
-1. `./setup.ps1`
+1. `./setup.ps1` on powershell prompt or `powershell ./setup.ps1`
