@@ -25,14 +25,20 @@ jobs:
     - name: Run script (1st time)
       run: |
         $Env:Path += ";" + $Env:USERPROFILE + "\scoop\shims"
-        ./setup.ps1
+        ./WindowsEnvSetup.ps1
       shell: pwsh
 
     - name: Run script (2nd time to check idempotency)
       run: |
         $Env:Path += ";" + $Env:USERPROFILE + "\scoop\shims"
-        ./setup.ps1
+        ./WindowsEnvSetup.ps1
       shell: pwsh
+
+    - name: Run script via proxy script
+      run: |
+        $Env:Path += ";" + $Env:USERPROFILE + "\scoop\shims"
+        ./WindowsEnvSetup.cmd
+      shell: cmd
 
   lint:
     runs-on: windows-latest
@@ -47,5 +53,5 @@ jobs:
 
     - name: Check syntax of PowerShell script
       run: |
-        Invoke-ScriptAnalyzer setup.ps1
+        Invoke-ScriptAnalyzer WindowsEnvSetup.ps1
       shell: pwsh
