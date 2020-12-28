@@ -29,6 +29,7 @@ foreach ($bucket in $add_bucket_array) {
 
 # Install each modules.
 $install_module_array = @('cppcheck',
+			  'curl',
 			  'dark',
 			  'emacs',
 			  'innounp',
