@@ -17,27 +17,22 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Install Scoop
-      run: |
-        Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-        iex (New-Object net.webclient).downloadstring('https://get.scoop.sh')
+      uses: MinoruSekine/setup-scoop@v1
+
+    - name : Debug
+      run: $Env:Path
       shell: pwsh
 
     - name: Run script (1st time)
-      run: |
-        $Env:Path += ";" + $Env:USERPROFILE + "\scoop\shims"
-        ./WindowsEnvSetup.ps1
+      run: ./WindowsEnvSetup.ps1
       shell: pwsh
 
     - name: Run script (2nd time to check idempotency)
-      run: |
-        $Env:Path += ";" + $Env:USERPROFILE + "\scoop\shims"
-        ./WindowsEnvSetup.ps1
+      run: ./WindowsEnvSetup.ps1
       shell: pwsh
 
     - name: Run script via proxy script
-      run: |
-        $Env:Path += ";" + $Env:USERPROFILE + "\scoop\shims"
-        ./WindowsEnvSetup.cmd
+      run: ./WindowsEnvSetup.cmd
       shell: cmd
 
   lint:
