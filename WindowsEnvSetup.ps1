@@ -22,7 +22,7 @@ function ScoopAddBucketIfUnavailable($bucket_name) {
 }
 
 # Add buckets if not available.
-$add_bucket_array = @('extras', 'java')
+$add_bucket_array = @('extras', 'java', 'nonportable')
 foreach ($bucket in $add_bucket_array) {
     ScoopAddBucketIfUnavailable $bucket
 }
@@ -33,6 +33,7 @@ $install_module_array = @('cppcheck',
 			  'dark',
 			  'doxygen'
 			  'emacs',
+			  'google-japanese-input-np',
 			  'innounp',
 			  'mobaxterm',
 			  'openjdk',
