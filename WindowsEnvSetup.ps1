@@ -38,7 +38,8 @@ $install_module_array = @('cppcheck',
 			  'mobaxterm',
 			  'openjdk',
 			  'plantuml',
-			  'python')
+			  'python',
+			  'windirstat')
 foreach ($command_to_install in $install_module_array) {
     ScoopInstallIfUnavailable $command_to_install
 }
