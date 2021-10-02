@@ -13,7 +13,7 @@ All following processes are run in PowerShell.
 1. `Set-ExecutionPolicy RemoteSigned -scope CurrentUser`.
 1. `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')`
 
-## Configure proxy for Sccop (if necessary)
+## Configure proxy for Scoop (if necessary)
 
 1. `scoop config proxy your.proxy.server:port`
 
