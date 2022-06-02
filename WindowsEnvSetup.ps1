@@ -40,6 +40,7 @@ $install_module_array = @('cppcheck',
 			  'plantuml',
 			  'python',
 			  'sshfs-np',
+			  'sysinternals',
 			  'windirstat')
 foreach ($command_to_install in $install_module_array) {
     ScoopInstallIfUnavailable $command_to_install
