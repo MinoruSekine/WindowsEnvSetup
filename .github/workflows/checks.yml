@@ -19,10 +19,6 @@ jobs:
     - name: Install Scoop
       uses: MinoruSekine/setup-scoop@main
 
-    - name : Debug
-      run: $Env:Path
-      shell: pwsh
-
     - name: Run script (1st time)
       run: ./WindowsEnvSetup.ps1
       shell: pwsh
