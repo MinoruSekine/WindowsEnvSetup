@@ -34,6 +34,7 @@ $install_module_array = @('cppcheck',
 			  'doxygen'
 			  'emacs',
 			  'google-japanese-input-np',
+			  'graphviz',
 			  'innounp',
 			  'mobaxterm',
 			  'openjdk',
