@@ -1,1 +1,1 @@
-powershell.exe -NoProfile -ExecutionPolicy Unrestricted ".\WindowsEnvSetup.ps1"  "$@"
+powershell.exe -NoProfile -ExecutionPolicy Unrestricted ".\WindowsEnvSetup.ps1" "%*"
