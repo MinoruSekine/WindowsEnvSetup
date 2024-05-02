@@ -1,3 +1,6 @@
+[CmdletBinding()]
+param()
+
 function ScoopInstallIfUnavailable($module_name) {
     if (Get-Command $module_name -ea SilentlyContinue) {
 	return
