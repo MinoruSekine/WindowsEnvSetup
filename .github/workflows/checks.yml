@@ -10,7 +10,7 @@ jobs:
   run_check:
     strategy:
       matrix:
-        os: [windows-latest, windows-2019]
+        os: [windows-latest, windows-2022]
         verbose: ["-Verbose", ""]
 
     runs-on: ${{ matrix.os }}
